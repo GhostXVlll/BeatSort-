@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 namespace BeatSort
@@ -7,6 +8,7 @@ namespace BeatSort
     {
         //[SerializeField]private float upForce = 50f;
         [SerializeField] private ItemType type;
+        public UnityEvent OnHideRequest;
         public ItemType Type { get => type; }
         private Rigidbody _rigidbody;
         public bool isDraggable { get; private set; }

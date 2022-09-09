@@ -52,7 +52,7 @@ namespace BeatSort
             {
                 //Debug.Log("Ветка фулл");
                 onFull.Invoke();
-                Debug.Log("<color=pink>_ YOU WIN!!! _</color>");
+                //Debug.Log("<color=pink>_ YOU WIN!!! _</color>");
             }
         }
         private void OnDestroy()
