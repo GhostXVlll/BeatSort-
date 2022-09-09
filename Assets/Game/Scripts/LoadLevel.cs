@@ -52,29 +52,5 @@ namespace BeatSort
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        //}public class LoadLevel : MonoBehaviour
-        //{
-        //    [SerializeField] private GameObject _prefab;
-
-        //    void Start()
-        //    {
-        //        Vector3 offset = new Vector3(0, 0, 0);
-        //        Instantiate(_prefab, transform.position + offset, Quaternion.identity);
-        //    }
-
-
-
-
-        //    private void Update()
-        //    {
-        //        if (Input.GetKeyUp(KeyCode.R))
-        //        {
-        //            ReloadLevel();
-        //        }
-        //    }
-        //    public void ReloadLevel()
-        //    {
-        //        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //    }
     }
 }

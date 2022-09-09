@@ -29,9 +29,10 @@ namespace BeatSort
         private void OnTriggerStay(Collider other)
         {
             if (!active)
+            {
                 return;
+            }
             var item = other.attachedRigidbody.GetComponent<DragItem>();
-            //var item = other.gameObject.GetComponent<DragItem>();
 
             if (item != null && item.isDraggable == true)
             {
@@ -51,7 +52,6 @@ namespace BeatSort
             }
             if (item.isDraggable == false && _item == item)
             {
-                //DelItem();
                 _item = null;
 
                 return;
@@ -108,46 +108,3 @@ namespace BeatSort
         }
     }
 }
-
-//------------------------
-
-//} private void OnTriggerEnter(Collider other)
-//{
-//    if (!active)
-//    { return; }
-//    var item = other.attachedRigidbody.GetComponent<DragItem>();
-//    //var item = other.gameObject.GetComponent<DragItem>();
-
-//    if (item == null || item.isDraggable == false)
-//    {
-//        _item = null;
-//        return;
-//    }
-//    if (_item == item.gameObject)
-//    {
-//        if (_item == null)
-//        {
-//            _item = item;
-//        }
-//    }
-//    Debug.Log(item);
-//    _item = item;
-//    if (_item.Type == type && _item.isDraggable == false)
-//    {
-//        Destroy(_item.gameObject);
-//        _material.color = Color.green;
-//        count++;
-
-//        onCountChanged.Invoke(this);
-
-//        if (count >= targetCount)
-//        {
-//            _material.color = Color.cyan;
-//            active = false;
-//        }
-//    }
-//    else if (_item.isDraggable == false)
-//    {
-//        Destroy(_item.gameObject);
-//        _material.color = Color.gray;
-//    }
