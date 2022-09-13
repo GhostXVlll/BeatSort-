@@ -7,9 +7,11 @@ namespace BeatSort
     {
         [SerializeField] private GetterParameters[] _getters;
         public UnityEvent onFull;
+        public static bool _stopSpawn = false;
 
         private void Start()
         {
+            _stopSpawn = false;
             if (_getters == null)
             {
                 Debug.LogError("<color=orange>Getters is NULL</color>");
@@ -50,9 +52,8 @@ namespace BeatSort
             }
             if (full)
             {
-                //Debug.Log("Ветка фулл");
                 onFull.Invoke();
-                //Debug.Log("<color=pink>_ YOU WIN!!! _</color>");
+                _stopSpawn = true;
             }
         }
         private void OnDestroy()

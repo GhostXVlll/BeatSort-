@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: 6737938650610614940}
   - component: {fileID: 3025490648863059851}
   - component: {fileID: -3951419828444905981}
-  - component: {fileID: 620834736913729123}
   - component: {fileID: 933389787089155030}
   - component: {fileID: -8559393256861201149}
   - component: {fileID: 7573745909560412567}
+  - component: {fileID: 3433686693647522556}
   - component: {fileID: 7086449143808849562}
   m_Layer: 0
   m_Name: Cube(red)_prf
@@ -146,19 +146,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &620834736913729123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3341909542343517261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cbad4241b4b1994c9a9693f2eb5827b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _circleFXPrefab: {fileID: 3614269437862823974, guid: 4fc33be12d038774da153ebfb93ec2cc, type: 3}
 --- !u!114 &933389787089155030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +186,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolProvider: {fileID: 933389787089155030}
+--- !u!114 &3433686693647522556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341909542343517261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cbad4241b4b1994c9a9693f2eb5827b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _circleFXPrefab: {fileID: 3614269437862823974, guid: 4fc33be12d038774da153ebfb93ec2cc, type: 3}
 --- !u!54 &7086449143808849562
 Rigidbody:
   m_ObjectHideFlags: 0
