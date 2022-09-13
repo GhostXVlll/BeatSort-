@@ -6,20 +6,26 @@ namespace BeatSort
     public class ItemSpawner : MonoBehaviour
     {
         [SerializeField] private GameObject[] _prefab;
-        [SerializeField] private int _count;
         [SerializeField] private Vector3 _range;
         [SerializeField] private int spawnDelay = 2;
 
+        ScoreHandler getter = new ScoreHandler();
 
         IEnumerator Start()
         {
-            for (int i = 0; i < _count; i++)
+            while (true)
             {
-                var rand = Random.Range(0, _prefab.Length);
-                Vector3 offset = new Vector3(_range.x, _range.y, Random.Range(-_range.z, _range.z));
-                Instantiate(_prefab[rand], transform.position + offset, Quaternion.identity, transform);
+                bool _full = ScoreHandler._stopSpawn;
+                if (_full)
+                { break; }
+                else
+                {
+                    var rand = Random.Range(0, _prefab.Length);
+                    Vector3 offset = new Vector3(_range.x, _range.y, Random.Range(-_range.z, _range.z));
+                    Instantiate(_prefab[rand], transform.position + offset, Quaternion.identity, transform);
 
-                yield return new WaitForSeconds(spawnDelay);
+                    yield return new WaitForSeconds(spawnDelay);
+                }
             }
         }
     }

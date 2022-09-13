@@ -72,6 +72,7 @@ namespace BeatSort
                 if (item.isDraggable == false)
                 {
                     DelItem();
+                    _item.OnHideRequest.Invoke();
                 }
                 _item = null;
             }
