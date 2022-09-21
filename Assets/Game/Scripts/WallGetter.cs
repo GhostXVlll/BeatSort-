@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-
-//Write cube destroy on triggers is full!
 
 namespace BeatSort
 {
@@ -19,11 +15,23 @@ namespace BeatSort
         private int count = 0;
 
         public UnityEvent<WallGetter> onCountChanged;
+        public UnityEvent OnClick;
+
+        AnimateVolumeWieght _flash;
 
         private void Start()
         {
             _material = GetComponent<MeshRenderer>().material;
             _defaultColor = _material.color;
+            _flash = GetComponent<AnimateVolumeWieght>();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (active)
+            {
+                OnClick.Invoke();
+            }
         }
 
         private void OnTriggerStay(Collider other)
@@ -38,14 +46,13 @@ namespace BeatSort
             {
                 _item = item;
 
-                if (_item.Type == type)             //Correct cube swipe
-                {
+                if (_item.Type == type)
+                {  //Correct cube swipe
                     _material.color = Color.green;
-                    //Debug.Log("<color=green> NICE! </color>");
+                    _flash.Animate();
                 }
                 else
-                {                                   //Incorrect cube swipe     
-                    //Debug.Log("<color=red> INCORRECT! </color>");
+                {       //Incorrect cube swipe     
                     _material.color = Color.red;
                 }
                 return;
@@ -56,7 +63,6 @@ namespace BeatSort
 
                 return;
             }
-
         }
 
         private void OnTriggerExit(Collider other)
@@ -77,9 +83,6 @@ namespace BeatSort
                 _item = null;
             }
         }
-
-
-        //------------------------Selfwritting methodS----------------//
 
         private void DelItem()
         {
