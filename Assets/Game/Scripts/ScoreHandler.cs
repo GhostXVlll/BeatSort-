@@ -9,12 +9,20 @@ namespace BeatSort
         public UnityEvent onFull;
         public static bool _stopSpawn = false;
 
+        LoadLevel _loadLevel;
+        //WinCanvas _canvas;
+        CharAnimationPlayer _player;
+
         private void Start()
         {
+            //_canvas = GetComponent<WinCanvas>();//
+            _loadLevel = GetComponent<LoadLevel>();
+            _player = GetComponent<CharAnimationPlayer>();
+
             _stopSpawn = false;
             if (_getters == null)
             {
-                Debug.LogError("<color=orange>Getters is NULL</color>");
+                Debug.LogError("Getters is NULL");
                 return;
             }
             foreach (var getter in _getters)
@@ -40,22 +48,25 @@ namespace BeatSort
                 if (item.count < item.taggetCount)
                 {
                     full = false;
-                    //Debug.Log("<color=yellow>NOT FULL</color>");
 
                     break;
                 }
                 else
                 {
                     full = true;
-                    //Debug.Log("<color=black>FULL</color>");
                 }
             }
             if (full)
             {
-                onFull.Invoke();
+                //_canvas.PlayShow();
                 _stopSpawn = true;
+                _player.PlayDancing();
+                //_loadLevel.NextLevel(); //
+
+                onFull.Invoke();
             }
         }
+
         private void OnDestroy()
         {
             foreach (var getter in _getters)

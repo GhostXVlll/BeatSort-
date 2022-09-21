@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace BeatSort
@@ -13,12 +10,10 @@ namespace BeatSort
             var item = other.attachedRigidbody.GetComponent<DragItem>();
             _cube = item;
             TryGetItem();
-
         }
 
         private void TryGetItem()
         {
-            //Debug.Log("ITEM: " + _cube + " LOSED.");
             Destroy(_cube.gameObject);
         }
     }
