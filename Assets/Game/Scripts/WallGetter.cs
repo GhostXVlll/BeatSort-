@@ -17,13 +17,16 @@ namespace BeatSort
         public UnityEvent<WallGetter> onCountChanged;
         public UnityEvent OnClick;
 
-        AnimateVolumeWieght _flash;
+        private CharAnimationPlayer _player;
+
+        private AnimateVolumeWieght _flash;
 
         private void Start()
         {
             _material = GetComponent<MeshRenderer>().material;
             _defaultColor = _material.color;
             _flash = GetComponent<AnimateVolumeWieght>();
+            _player = FindObjectOfType<CharAnimationPlayer>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -47,13 +50,14 @@ namespace BeatSort
                 _item = item;
 
                 if (_item.Type == type)
-                {  //Correct cube swipe
+                {       //Correct cube swipe
                     _material.color = Color.green;
                     _flash.Animate();
                 }
                 else
                 {       //Incorrect cube swipe     
                     _material.color = Color.red;
+                    _player.PlayRejected(); /// Delete this some later ///
                 }
                 return;
             }

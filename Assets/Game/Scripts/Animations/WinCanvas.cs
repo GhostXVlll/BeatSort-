@@ -12,13 +12,13 @@ namespace BeatSort
         public void PlayShow()
         {
             _animator.SetTrigger(Open);
-            //Debug.Log("Canvas OPEN"); //
+            Debug.Log("Canvas OPEN");
         }
 
         public void PlayHide()
         {
             _animator.SetTrigger(Close);
-            //Debug.Log("Canvas HIDE");
+            Debug.Log("Canvas HIDE");
         }
     }
 }
