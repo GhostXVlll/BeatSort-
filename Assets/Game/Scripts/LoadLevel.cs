@@ -11,40 +11,40 @@ namespace BeatSort
 
         void Start()
         {
-            //var level = PlayerPrefs.GetInt("Level", 0);
-            //var idx = SceneManager.GetActiveScene().buildIndex;
-            //if (level != idx)
-            LoadSomeLevel(idx);
+            PlayerPrefs.SetInt("Level", idx);
+            LoadSomeLevel();
         }
 
 
-        public void LoadSomeLevel(int idx)
+        public void LoadSomeLevel()
         {
-            if (_currentLevel != null)
+            if (_currentLevel != null) // Dstroying old level
             {
                 Destroy(_currentLevel);
             }
-            //var idx = SceneManager.GetActiveScene().buildIndex;
-            //var sceneCount = SceneManager.sceneCountInBuildSettings;
-            //var nextLevel = (idx) % _levels.Length;
+
+            idx = PlayerPrefs.GetInt("Level");
 
             Vector3 offset = new Vector3(0, 0, 0);
 
             _currentLevel = Instantiate(_levels[idx], transform.position + offset, Quaternion.identity);
+
             Debug.Log("Level \"" + _currentLevel + "\" was loaded.");
         }
         public void NextLevel()
         {
-            Debug.Log("AAAAAAAAAAAAAAAA"); //
-            var idx = SceneManager.GetActiveScene().buildIndex;
-            var sceneCount = SceneManager.sceneCountInBuildSettings;
-            var nextLevel = idx + 1;
+            Debug.Log("next level TAG \n --------------------------------------------");
+            var level = PlayerPrefs.GetInt("Level");
+
+            int nextLevel = level + 1;
 
             PlayerPrefs.SetInt("Level", nextLevel);
 
-            _currentLevel = Instantiate(_levels[nextLevel]);
-            Debug.Log("Level \"" + _currentLevel + "\" was loaded.");
-            //LoadSomeLevel(idx);
+            LoadSomeLevel();
+        }
+        private void OnApplicationQuit()  //save settings on app quit
+        {
+            PlayerPrefs.Save();
         }
 
         private void Update() // Reload Scene \|/

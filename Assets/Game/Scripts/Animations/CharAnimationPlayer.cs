@@ -4,25 +4,20 @@ namespace BeatSort
 {
     public class CharAnimationPlayer : MonoBehaviour
     {
-        [SerializeField] private Animator _anim;
+        [SerializeField] private Animator _animator;
 
         private static readonly int Rejected = Animator.StringToHash("Rejected");
         private static readonly int Dancing = Animator.StringToHash("Dancing");
 
-        private void Start()
-        {
-            //PlayRejected();
-        }
-
         public void PlayRejected()
         {
-            _anim.SetTrigger(Rejected);
+            _animator.SetTrigger(Rejected);
             Debug.Log("Rejected");
         }
 
         public void PlayDancing()
         {
-            _anim.SetTrigger(Dancing);
+            _animator.SetTrigger(Dancing);
             Debug.Log("Dancing");
         }
     }
