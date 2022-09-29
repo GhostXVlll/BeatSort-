@@ -12,13 +12,11 @@ namespace BeatSort
         public void PlayRejected()
         {
             _animator.SetTrigger(Rejected);
-            Debug.Log("Rejected");
         }
 
         public void PlayDancing()
         {
             _animator.SetTrigger(Dancing);
-            Debug.Log("Dancing");
         }
     }
 }

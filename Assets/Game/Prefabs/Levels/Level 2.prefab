@@ -589,7 +589,6 @@ MonoBehaviour:
           m_StringArgument: Win
           m_BoolArgument: 0
         m_CallState: 2
-  _player: {fileID: 4945006180987138448}
 --- !u!1 &5982062846653774615 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5354902541853652979, guid: 78893a158acb1ab49bbbc135c1b1844a, type: 3}
@@ -700,6 +699,10 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 4945006180987138448}
+    - target: {fileID: 541070506004938716, guid: be9fb563ad982d04c833fa3a2bfa4ff7, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 5667278526598344440}
     - target: {fileID: 541070506004938718, guid: be9fb563ad982d04c833fa3a2bfa4ff7, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -713,6 +716,11 @@ PrefabInstance:
 --- !u!1 &4945006180987138448 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 973978060784394422, guid: be9fb563ad982d04c833fa3a2bfa4ff7, type: 3}
+  m_PrefabInstance: {fileID: 5270463947257581862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5667278526598344440 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 541070506004938718, guid: be9fb563ad982d04c833fa3a2bfa4ff7, type: 3}
   m_PrefabInstance: {fileID: 5270463947257581862}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &5758943145805556522 stripped

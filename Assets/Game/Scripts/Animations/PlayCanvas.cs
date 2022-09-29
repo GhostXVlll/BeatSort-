@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace BeatSort
 {
-    public class WinCanvas : MonoBehaviour
+    public class PlayCanvas : MonoBehaviour
     {
         [SerializeField] private Animator _animator;
 
