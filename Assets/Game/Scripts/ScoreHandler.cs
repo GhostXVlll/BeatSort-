@@ -12,18 +12,21 @@ namespace BeatSort
         private CharAnimationPlayer _player; ///  Remove some later
         private WinCanvas _winCanvas;
 
-        private PlayCanvas _playCanvas;     //  // Relocate to State Macine
+        private PlayCanvas _playCanvas;     //  Relocate to State Machine
+        private MenuCanvas _menuCanvas;     //  Relocate to State Machine
 
         private void Start()
         {
-            _playCanvas = FindObjectOfType<PlayCanvas>();   //  // Relocate to State Macine
+            _playCanvas = FindObjectOfType<PlayCanvas>();   //  Relocate to State Machine
+            _menuCanvas = FindObjectOfType<MenuCanvas>();        //  Relocate to State Macine
 
             _winCanvas = FindObjectOfType<WinCanvas>();
             _player = FindObjectOfType<CharAnimationPlayer>();
 
             _stopSpawn = false;
 
-            _playCanvas.PlayShow();     // Relocate to State Macine
+            _playCanvas.PlayShow();     // Relocate to State Machine
+            _menuCanvas.PlayHide();     // Relocate to State Machine
 
             if (_getters == null)
             {
@@ -64,11 +67,11 @@ namespace BeatSort
             if (full)
             {
                 _playCanvas.PlayHide();
-                _winCanvas.PlayShow(); // Relocate to State Macine
+                _winCanvas.PlayShow(); // Relocate to State Machine
 
                 _stopSpawn = true;
 
-                _player.PlayDancing();  /// Remoev some later
+                _player.PlayDancing();  /// Remove some later
 
                 onFull.Invoke();
             }

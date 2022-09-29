@@ -15,13 +15,21 @@ namespace BeatSort
             LoadSomeLevel();
         }
 
-
-        public void LoadSomeLevel()
+        public void DestroyCurrentLevel()
         {
             if (_currentLevel != null) // Dstroying old level
             {
                 Destroy(_currentLevel);
             }
+        }
+
+        public void LoadSomeLevel()
+        {
+            //if (_currentLevel != null) // Dstroying old level
+            //{
+            //    Destroy(_currentLevel);
+            //}
+            DestroyCurrentLevel();
 
             idx = PlayerPrefs.GetInt("Level");
 
