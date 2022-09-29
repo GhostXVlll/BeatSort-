@@ -9,19 +9,21 @@ namespace BeatSort
         public UnityEvent onFull;
         public static bool _stopSpawn = false;
 
-        private LoadLevel _loadLevel;
-        private CharAnimationPlayer _player;
+        private CharAnimationPlayer _player; ///  Remove some later
         private WinCanvas _winCanvas;
+
+        private PlayCanvas _playCanvas;     //  // Relocate to State Macine
 
         private void Start()
         {
-            _winCanvas = FindObjectOfType<WinCanvas>();//
-            Debug.Log(_winCanvas);
+            _playCanvas = FindObjectOfType<PlayCanvas>();   //  // Relocate to State Macine
 
+            _winCanvas = FindObjectOfType<WinCanvas>();
             _player = FindObjectOfType<CharAnimationPlayer>();
-            _loadLevel = FindObjectOfType<LoadLevel>();
 
             _stopSpawn = false;
+
+            _playCanvas.PlayShow();     // Relocate to State Macine
 
             if (_getters == null)
             {
@@ -61,13 +63,12 @@ namespace BeatSort
             }
             if (full)
             {
-                _winCanvas.PlayShow();
+                _playCanvas.PlayHide();
+                _winCanvas.PlayShow(); // Relocate to State Macine
 
                 _stopSpawn = true;
 
-                //_player.PlayDancing();
-
-                //_loadLevel.NextLevel(); //ВКЛЮЧИТЬ ИЗ КНОПКИ WIN CANVAS
+                _player.PlayDancing();  /// Remoev some later
 
                 onFull.Invoke();
             }
