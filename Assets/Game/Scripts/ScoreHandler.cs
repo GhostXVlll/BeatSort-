@@ -14,6 +14,7 @@ namespace BeatSort
 
         private PlayCanvas _playCanvas;     //  Relocate to State Machine
         private MenuCanvas _menuCanvas;     //  Relocate to State Machine
+        private LoadLevel _loadLevel;
 
         private void Start()
         {
@@ -23,10 +24,15 @@ namespace BeatSort
             _winCanvas = FindObjectOfType<WinCanvas>();
             _player = FindObjectOfType<CharAnimationPlayer>();
 
+            _loadLevel = FindObjectOfType<LoadLevel>();
+
             _stopSpawn = false;
 
             _playCanvas.PlayShow();     // Relocate to State Machine
-            _menuCanvas.PlayHide();     // Relocate to State Machine
+            if (_menuCanvas.isActiveAndEnabled)
+            {
+                _menuCanvas.PlayHide();     // Relocate to State Machine
+            }
 
             if (_getters == null)
             {
@@ -66,12 +72,14 @@ namespace BeatSort
             }
             if (full)
             {
+
                 _playCanvas.PlayHide();
                 _winCanvas.PlayShow(); // Relocate to State Machine
 
                 _stopSpawn = true;
 
                 _player.PlayDancing();  /// Remove some later
+                _loadLevel.DestroyCurrentLevel();
 
                 onFull.Invoke();
             }
