@@ -11,13 +11,13 @@ namespace BeatSort
 
         void Start()
         {
-            PlayerPrefs.SetInt("Level", idx);
+            //PlayerPrefs.SetInt("Level", idx);
             LoadSomeLevel();
         }
 
-        public void DestroyCurrentLevel()
+        public void DestroyCurrentLevel()       // Dstroying old level
         {
-            if (_currentLevel != null) // Dstroying old level
+            if (_currentLevel != null)
             {
                 Destroy(_currentLevel);
             }
@@ -25,13 +25,13 @@ namespace BeatSort
 
         public void LoadSomeLevel()
         {
-            //if (_currentLevel != null) // Dstroying old level
-            //{
-            //    Destroy(_currentLevel);
-            //}
             DestroyCurrentLevel();
 
-            idx = PlayerPrefs.GetInt("Level");
+            if (PlayerPrefs.HasKey("Level"))
+            {
+                idx = PlayerPrefs.GetInt("Level");
+            }
+            else idx = 0;
 
             Vector3 offset = new Vector3(0, 0, 0);
 
@@ -50,6 +50,12 @@ namespace BeatSort
 
             LoadSomeLevel();
         }
+
+        public void StartProvider()
+        {
+            Start();
+        }
+
         private void OnApplicationQuit()  //save settings on app quit
         {
             PlayerPrefs.Save();

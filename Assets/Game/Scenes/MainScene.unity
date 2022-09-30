@@ -1646,8 +1646,9 @@ GameObject:
   - component: {fileID: 674317363}
   - component: {fileID: 674317362}
   - component: {fileID: 674317361}
+  - component: {fileID: 674317364}
   m_Layer: 5
-  m_Name: Level
+  m_Name: Level1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1718,7 +1719,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 674317362}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 674317364}
+        m_TargetAssemblyTypeName: BeatSort.LevelSelector, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &674317362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1757,6 +1770,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674317359}
   m_CullTransparentMesh: 1
+--- !u!114 &674317364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674317359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10063db818f81624d822d2d5bc00b3d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &689510048
 GameObject:
   m_ObjectHideFlags: 0
@@ -3275,8 +3300,9 @@ GameObject:
   - component: {fileID: 1138070598}
   - component: {fileID: 1138070597}
   - component: {fileID: 1138070596}
+  - component: {fileID: 1138070599}
   m_Layer: 5
-  m_Name: Level
+  m_Name: Level3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3347,7 +3373,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1138070597}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1138070599}
+        m_TargetAssemblyTypeName: BeatSort.LevelSelector, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1138070597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3386,6 +3424,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138070594}
   m_CullTransparentMesh: 1
+--- !u!114 &1138070599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138070594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10063db818f81624d822d2d5bc00b3d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1140458996
 GameObject:
   m_ObjectHideFlags: 0
@@ -3513,8 +3563,9 @@ GameObject:
   - component: {fileID: 1150360913}
   - component: {fileID: 1150360912}
   - component: {fileID: 1150360911}
+  - component: {fileID: 1150360914}
   m_Layer: 5
-  m_Name: Level
+  m_Name: Level2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3585,7 +3636,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1150360912}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1150360914}
+        m_TargetAssemblyTypeName: BeatSort.LevelSelector, Assembly-CSharp
+        m_MethodName: Click
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1150360912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3624,6 +3687,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150360909}
   m_CullTransparentMesh: 1
+--- !u!114 &1150360914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150360909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10063db818f81624d822d2d5bc00b3d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1237297485
 GameObject:
   m_ObjectHideFlags: 0
